@@ -19,6 +19,7 @@ WORKDIR /go/src/github.com/containerd/cri
 
 # copy modified file
 COPY container_create.go /go/src/github.com/containerd/cri/pkg/server/container_create.go
+COPY container_update_resources.go /go/src/github.com/containerd/cri/pkg/server/container_update_resources.go
 
 # Build
 RUN make clean
