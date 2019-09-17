@@ -11,15 +11,15 @@ RUN mkdir -p /go/src/github.com/containerd
 WORKDIR /go/src/github.com/containerd
 
 # get the last release version
-#RUN wget https://github.com/containerd/cri/archive/v1.11.1.tar.gz
-#RUN tar xvf v1.11.1.tar.gz
-#RUN mv cri-1.11.1 cri
-#WORKDIR /go/src/github.com/containerd/cri
+RUN wget https://github.com/containerd/cri/archive/v1.11.1.tar.gz
+RUN tar xvf v1.11.1.tar.gz
+RUN mv cri-1.11.1 cri
+WORKDIR /go/src/github.com/containerd/cri
 
 # copy modified file
 #COPY container_create.go /go/src/github.com/containerd/cri/pkg/server/container_create.go
 #COPY container_update_resources.go /go/src/github.com/containerd/cri/pkg/server/container_update_resources.go
-COPY spec_unix.go /go/src/github.com/containerd/cri/pkg/containerd/opts/spec_unix.go
+COPY container_update_resources.go /go/src/github.com/containerd/cri/pkg/server/container_update_resources.go
 
 # Build
 RUN make clean
