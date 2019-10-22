@@ -8,9 +8,9 @@ RUN mkdir -p /go/src/github.com/containerd
 WORKDIR /go/src/github.com/containerd
 
 # get the last release version
-RUN wget https://github.com/containerd/cri/archive/v1.11.1.tar.gz
-RUN tar xvf v1.11.1.tar.gz
-RUN mv cri-1.11.1 cri
+RUN wget https://github.com/containerd/cri/archive/release/1.3.zip
+RUN unzip 1.3.zip
+RUN mv cri-release-1.3 cri
 WORKDIR /go/src/github.com/containerd/cri
 
 # Build
